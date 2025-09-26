@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zubeen Garg - A Musical Legend</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Zubeen Garg</h1>
+                <p>The Voice of Assam</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#biography">Biography</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#music">Music</a></li>
+                    <li><a href="#videos">Videos</a></li>
+                    <li><a href="#tribute">Share Tribute</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h2>Celebrating the Legacy of</h2>
+            <h1>Zubeen Garg</h1>
+            <p>Singer, Musician, Actor, and Cultural Icon</p>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section id="biography" class="section">
+        <div class="container">
+            <h2 class="section-title">Biography</h2>
+            <div class="bio-content">
+                <div class="bio-text">
+                    <p>Zubeen Garg (born Sujit Narayan Garg on 18 November 1972) is an Indian singer, music director, actor, film director, lyricist, and poet from Assam. He is known for his work in Assamese, Bengali, Hindi, and other Indian languages.</p>
+                    
+                    <p>He began his musical journey at a young age and gained recognition with his debut album "Moina Go" in 1992. Over the decades, he has become one of the most influential cultural figures in Northeast India, known for his powerful vocals and contributions to Assamese cinema and music.</p>
+                    
+                    <p>Zubeen has received numerous awards including the Filmfare Awards East, Assam State Film Awards, and several national honors for his contributions to Indian music and cinema. His work often blends traditional Assamese folk elements with contemporary styles, creating a unique musical identity.</p>
+                    
+                    <p>Beyond music, he is known for his humanitarian work and efforts to promote Assamese culture on national and international platforms.</p>
+                </div>
+                <div class="bio-image">
+                    <img src="assets/images/zubeen1.jpg" alt="Zubeen Garg performing">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Photo Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/images/zubeen1.jpg" alt="Zubeen Garg concert">
+                    <div class="gallery-overlay">
+                        <p>Live Performance, 2019</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/zubeen2.jpg" alt="Zubeen Garg with fans">
+                    <div class="gallery-overlay">
+                        <p>Meeting Fans in Guwahati</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/placeholder.jpg" alt="Zubeen Garg recording studio">
+                    <div class="gallery-overlay">
+                        <p>In the Recording Studio</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/placeholder.jpg" alt="Zubeen Garg award ceremony">
+                    <div class="gallery-overlay">
+                        <p>Receiving National Award</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/placeholder.jpg" alt="Zubeen Garg with family">
+                    <div class="gallery-overlay">
+                        <p>Family Time</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/placeholder.jpg" alt="Zubeen Garg charity event">
+                    <div class="gallery-overlay">
+                        <p>Charity Event in Assam</p>
+                    </div>
+                </div>
+            </div>
+            <div class="upload-section">
+                <h3>Share Your Memories</h3>
+                <p>Upload your photos with Zubeen Garg to be featured in our gallery</p>
+                <div class="upload-box">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & drop your image here or click to browse</p>
+                    <input type="file" id="imageUpload" accept="image/*">
+                </div>
+                <button id="uploadBtn" class="btn">Submit Photo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="section">
+        <div class="container">
+            <h2 class="section-title">Popular Songs</h2>
+            <div class="music-player">
+                <div class="player-header">
+                    <h3>Monot Pardesi</h3>
+                    <p>Album: Monot Pardesi (2003)</p>
+                </div>
+                <div class="player-controls">
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress" id="songProgress"></div>
+                        </div>
+                        <div class="time">
+                            <span id="currentTime">0:00</span>
+                            <span id="duration">0:00</span>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                        <button id="playBtn"><i class="fas fa-play"></i></button>
+                        <button id="nextBtn"><i class="fas fa-step-forward"></i></button>
+                    </div>
+                    <div class="volume-control">
+                        <i class="fas fa-volume-up"></i>
+                        <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.7">
+                    </div>
+                </div>
+                <audio id="audioPlayer" src="assets/audio/sample-song.mp3"></audio>
+            </div>
+            
+            <div class="song-list">
+                <h3>More Popular Songs</h3>
+                <ul>
+                    <li><i class="fas fa-music"></i> Moina Go</li>
+                    <li><i class="fas fa-music"></i> Ja Ja Re Ja</li>
+                    <li><i class="fas fa-music"></i> Dil Ne Kehna</li>
+                    <li><i class="fas fa-music"></i> Tumi Mur</li>
+                    <li><i class="fas fa-music"></i> O Mur Apunar Desh</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Fan Videos</h2>
+            <div class="videos-container">
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>Tribute by Fans in Guwahati</p>
+                    </div>
+                    <div class="video-info">
+                        <h4>Monot Pardesi Cover</h4>
+                        <p>Uploaded by: Assam Music Lovers</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>Concert Highlights 2022</p>
+                    </div>
+                    <div class="video-info">
+                        <h4>Live Performance</h4>
+                        <p>Uploaded by: Northeast Music Channel</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>Interview with Zubeen Garg</p>
+                    </div>
+                    <div class="video-info">
+                        <h4>Exclusive Interview</h4>
+                        <p>Uploaded by: Assamese Media</p>
+                    </div>
+                </div>
+            </div>
+            <div class="upload-section">
+                <h3>Share Your Video Tribute</h3>
+                <p>Upload your video tribute to Zubeen Garg</p>
+                <div class="upload-box">
+                    <i class="fas fa-video"></i>
+                    <p>Drag & drop your video here or click to browse</p>
+                    <input type="file" id="videoUpload" accept="video/*">
+                </div>
+                <button id="videoUploadBtn" class="btn">Submit Video</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tribute Section -->
+    <section id="tribute" class="section">
+        <div class="container">
+            <h2 class="section-title">Share Your Tribute</h2>
+            <div class="tribute-form">
+                <form id="tributeForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Share your memories, thoughts, or messages for Zubeen Garg" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Tribute</button>
+                </form>
+            </div>
+            
+            <div class="tributes">
+                <h3>Fan Tributes</h3>
+                <div class="tribute-item">
+                    <h4>Rahul Sharma</h4>
+                    <p>"Zubeen da's music has been the soundtrack of my life. His song 'Monot Pardesi' got me through my toughest times."</p>
+                    <span class="date">October 15, 2023</span>
+                </div>
+                <div class="tribute-item">
+                    <h4>Ananya Baruah</h4>
+                    <p>"As an Assamese living abroad, Zubeen's music connects me to my roots. His voice carries the soul of Assam."</p>
+                    <span class="date">October 12, 2023</span>
+                </div>
+                <div class="tribute-item">
+                    <h4>Pranjal Das</h4>
+                    <p>"I had the privilege of meeting him at a concert in Dibrugarh. His humility despite his fame is truly inspiring."</p>
+                    <span class="date">October 10, 2023</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Features Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Coming Soon</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Concert Calendar</h3>
+                    <p>Upcoming performances and events</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Discography</h3>
+                    <p>Complete collection of albums and songs</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-award"></i>
+                    <h3>Awards & Recognition</h3>
+                    <p>Chronicle of achievements and honors</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-podcast"></i>
+                    <h3>Interviews & Podcasts</h3>
+                    <p>Exclusive conversations and features</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Zubeen Garg</h2>
+                    <p>The Voice of Assam</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#biography">Biography</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#music">Music</a></li>
+                        <li><a href="#videos">Videos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Zubeen Garg Tribute. This is a fan-made tribute website. All rights to images and music belong to their respective owners.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
